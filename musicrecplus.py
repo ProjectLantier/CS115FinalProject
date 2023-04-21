@@ -28,6 +28,7 @@ def enterPreferences():
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
         dictGlobal += [(x)]
+    return userChoice()
      
 def menu():
     print("""Enter a letter to choose an option:
