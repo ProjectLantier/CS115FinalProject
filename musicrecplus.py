@@ -6,8 +6,6 @@ import functools
 FILE = "musicrecplus.txt"
 
 
-filename = "musicrecplus.txt"
-
 def fileData(filename):
     """ Converting text file into a dictionary """
     dict = {}
