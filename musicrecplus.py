@@ -23,7 +23,7 @@ def fileData(filename):
 def enterPreferences():
     """Lets the user enter their artist preferences until they enter an empty string"""
     #Bryce
-    
+
     x = "0"
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
@@ -39,7 +39,7 @@ m - Which user has the most likes
 q - Save and quit""")
 
 def saveQuit():
-    """ Saves the dictionary to the text file """
+    """ Saves the dictionary to the text file, user option q """
     #Lauren
 
     with open(FILE, 'w') as f:
@@ -47,6 +47,14 @@ def saveQuit():
             f.write("%s:%s" % (key, dictGlobal[key]))
     print("Your preferences have been saved to:", FILE)
     quit()
+
+def deletePreferences():
+    """ Deletes the user's preferences, user option d """
+   
+
+def showPreferences():
+    """ Display user preferences, user option s """
+    
 
 
 def userChoice():
@@ -70,6 +78,10 @@ def userChoice():
             #popMost()
         elif choices == "m":
             #mostLikes()
+        elif choices == "d":
+            deletePreferences()
+        elif choices == "s":
+            showPreferences()
         elif choices == "q":
             saveQuit()
         else:
