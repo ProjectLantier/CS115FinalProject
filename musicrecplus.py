@@ -30,6 +30,16 @@ h - How popular is the most popular
 m - Which user has the most likes
 q - Save and quit""")
 
+def saveQuit():
+    """ Saves the dictionary to the text file """
+    #Lauren
+
+    with open(FILE, 'w') as f:
+        for key in dictGlobal.keys():
+            f.write("%s:%s" % (key, dictGlobal[key]))
+    print("Preferences saved to", FILE, "Have a nice day!")
+    quit()
+    
 
 def userChoice():
     """ Provides the user menu options """
@@ -41,6 +51,7 @@ def userChoice():
            "quit\n")
 
     while choices != "q":
+
         if choices == "e":
             #enterPref()
         elif choices == "r":
@@ -60,13 +71,5 @@ def userChoice():
            "quit\n")
         
 
-def saveQuit():
-    """ Saves the dictionary to the text file """
-    #Lauren
 
-    with open(FILE, 'w') as f:
-        for key in dictGlobal.keys():
-            f.write("%s:%s" % (key, dictGlobal[key]))
-    print("Preferences saved to", FILE, "Have a nice day!")
-    quit()
 
