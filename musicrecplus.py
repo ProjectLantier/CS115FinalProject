@@ -7,8 +7,8 @@ FILE = "musicrecplus.txt"
 
 
 def fileData(filename):
-    #Lauren
     """ Converting text file into a dictionary """
+    #Lauren
     dict = {}
     with open(filename) as f:
         if f == "":
