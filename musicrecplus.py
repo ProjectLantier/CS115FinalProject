@@ -8,8 +8,6 @@ FILE = "musicrecplus.txt"
 
 def fileData(filename):
     """ Converting text file into a dictionary """
-    #Lauren
-
     dict = {}
     with open(filename) as f:
         if f == "":
@@ -21,6 +19,13 @@ def fileData(filename):
     dictGlobal = dict
     return dict
 
+def enterpreferences():
+    """Lets the user enter their artist preferences until they enter an empty string"""
+    x = "0"
+    while x != "":
+        x = input("Enter an artist that you like (Enter to finish): \n")
+        dictGlobal += [(x)]
+     
 def menu():
     print("""Enter a letter to choose an option:
 e - Enter preferences
@@ -47,7 +52,8 @@ def userChoice():
 
     choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
            "popular artists\n h - How popular is the most popular\n m - Which user has the most likes\n d - Delete " \
-           "Preferences\n s - Show Preferences\n q - Save and quit\n")
+           "Preferences\n s - Show Preferences\n q - Save and " \
+           "quit\n")
 
     while choices != "q":
 
@@ -61,10 +67,6 @@ def userChoice():
             #popMost()
         elif choices == "m":
             #mostLikes()
-        elif choices == "d":
-            #deletePref()
-        elif choices == "s":
-            #showPref()
         elif choices == "q":
             saveQuit()
         else:
@@ -73,6 +75,3 @@ def userChoice():
            "Preferences\n s - Show Preferences\n q - Save and " \
            "quit\n")
         
-
-
-
