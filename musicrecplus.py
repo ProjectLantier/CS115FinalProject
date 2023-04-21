@@ -27,3 +27,29 @@ p - Show most popular artists
 h - How popular is the most popular
 m - Which user has the most likes
 q - Save and quit""")
+
+
+def userChoice():
+    """ Provides the user menu options """
+
+    choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
+           "popular artists\n h - How popular is the most popular\n m - Which user has the most likes\n d - Delete " \
+           "Preferences\n s - Show Preferences\n q - Save and " \
+           "quit\n")
+
+    while choices != "q":
+        if choices == "e":
+            #enterPref()
+        elif choices == "r":
+            #getRec()
+        elif choices == "p":
+            #showPop()
+        elif choices == "h":
+            #popMost()
+        elif choices == "m":
+            #mostLikes()
+        else:
+            choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
+        
+        
+
