@@ -13,8 +13,17 @@ def fileData(filename):
         if f == "":
             return {}
         for line in f:
-            (userName, artists) = line.split(":")
-            dict[userName] = artists
+            (key, val) = line.split(":")
+            dict[key] = val
     global dictGlobal
     dictGlobal = dict
     return dict
+
+def menu():
+    print("""Enter a letter to choose an option:
+e - Enter preferences
+r - Get recommendations
+p - Show most popular artists
+h - How popular is the most popular
+m - Which user has the most likes
+q - Save and quit""")
