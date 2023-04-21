@@ -13,8 +13,8 @@ def fileData(filename):
         if f == "":
             return {}
         for line in f:
-            (key, val) = line.split(":")
-            dict[key] = val
+            (userName, artists) = line.split(":")
+            dict[userName] = artists
     global dictGlobal
     dictGlobal = dict
     return dict
