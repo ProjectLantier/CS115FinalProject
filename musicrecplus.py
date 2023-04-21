@@ -37,9 +37,9 @@ def saveQuit():
     with open(FILE, 'w') as f:
         for key in dictGlobal.keys():
             f.write("%s:%s" % (key, dictGlobal[key]))
-    print("Preferences saved to", FILE, "Have a nice day!")
+    print("Your preferences have been saved to:", FILE)
     quit()
-    
+
 
 def userChoice():
     """ Provides the user menu options """
