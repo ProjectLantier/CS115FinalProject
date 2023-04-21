@@ -37,6 +37,23 @@ p - Show most popular artists
 h - How popular is the most popular
 m - Which user has the most likes
 q - Save and quit""")
+    
+def mostPopular():
+    """ Displays the artist with the most likes, user option h """
+    #Lauren
+
+    partP = showPopular() #assuming part p makes a dictionary of low to high popular artists
+
+
+    if partP != {}:
+        for artist in partP:
+            if partP[artist] >= mostPopular:
+                mostPopular = partP[artist]
+                mostPopularArtist = artist
+            print("The most popular artist is", mostPopularArtist)
+    else:
+        return userChoice()
+
 
 def saveQuit():
     """ Saves the dictionary to the text file, user option q """
@@ -59,7 +76,7 @@ def showPreferences():
 
 def userChoice():
     """ Provides the user menu options """
-    #Lauren, Eshan, Bryce
+    #Lauren
 
     choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
            "popular artists\n h - How popular is the most popular\n m - Which user has the most likes\n d - Delete " \
@@ -75,7 +92,7 @@ def userChoice():
         elif choices == "p":
             #showPop()
         elif choices == "h":
-            #popMost()
+            mostPopular()
         elif choices == "m":
             #mostLikes()
         elif choices == "d":
