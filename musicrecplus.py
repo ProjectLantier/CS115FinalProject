@@ -8,6 +8,8 @@ FILE = "musicrecplus.txt"
 
 def fileData(filename):
     """ Converting text file into a dictionary """
+    #Lauren Kibalo
+
     dict = {}
     with open(filename) as f:
         if f == "":
@@ -50,6 +52,9 @@ def userChoice():
             #mostLikes()
         else:
             choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
+           "popular artists\n h - How popular is the most popular\n m - Which user has the most likes\n d - Delete " \
+           "Preferences\n s - Show Preferences\n q - Save and " \
+           "quit\n")
         
         
 
