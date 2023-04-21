@@ -47,8 +47,7 @@ def userChoice():
 
     choices = input("Enter a letter to choose an option :\n e - Enter preferences\n r - Get recommendations\n p - Show most " \
            "popular artists\n h - How popular is the most popular\n m - Which user has the most likes\n d - Delete " \
-           "Preferences\n s - Show Preferences\n q - Save and " \
-           "quit\n")
+           "Preferences\n s - Show Preferences\n q - Save and quit\n")
 
     while choices != "q":
 
@@ -62,6 +61,10 @@ def userChoice():
             #popMost()
         elif choices == "m":
             #mostLikes()
+        elif choices == "d":
+            #deletePref()
+        elif choices == "s":
+            #showPref()
         elif choices == "q":
             saveQuit()
         else:
