@@ -20,9 +20,10 @@ def fileData(filename):
     dictGlobal = dict
     return dict
 
-def enterpreferences():
+def enterPreferences():
     """Lets the user enter their artist preferences until they enter an empty string"""
     #Bryce
+    
     x = "0"
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
@@ -60,7 +61,7 @@ def userChoice():
     while choices != "q":
 
         if choices == "e":
-            #enterPref()
+            enterPreferences()
         elif choices == "r":
             #getRec()
         elif choices == "p":
