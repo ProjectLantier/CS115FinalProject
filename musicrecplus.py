@@ -7,20 +7,22 @@ FILE = "musicrecplus.txt"
 
 
 def fileData(filename):
+    #Lauren
     """ Converting text file into a dictionary """
     dict = {}
     with open(filename) as f:
         if f == "":
             return {}
         for line in f:
-            (key, val) = line.split(":")
-            dict[key] = val
+            (userName, artist) = line.split(":")
+            dict[userName] = artist
     global dictGlobal
     dictGlobal = dict
     return dict
 
 def enterpreferences():
     """Lets the user enter their artist preferences until they enter an empty string"""
+    #Bryce
     x = "0"
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
