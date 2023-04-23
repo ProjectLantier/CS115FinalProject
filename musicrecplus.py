@@ -20,17 +20,31 @@ def fileData(filename):
     dictGlobal = dict
     return dict
 
+def userName():
+    """Lets the user input their name and if they want their preferences to be private or not"""
+    #Bryce
+    username = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
+    return username
+
+def isPrivate(s):
+    """Returns true if the username s has a $ at the end of it"""
+    #Bryce
+    if s[-1] == $:
+        return True
+    else:
+        return False
+
 def enterPreferences():
     """Lets the user enter their artist preferences until they enter an empty string"""
     #Bryce
-
+    if 
     x = "0"
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
         if x == "":
             break
         else: 
-            dictGlobal += [(x)]
+            dictGlobal[userName] += [(x)]
     return userChoice()
      
 def menu():
@@ -73,10 +87,19 @@ def deletePreferences():
     """ Deletes the user's preferences, user option d """
    
 
-def showPreferences():
+def showPreferences(userName):
     """ Display user preferences, user option s """
     #Bryce
+    print(dictGlobal[userName])
 
+def showPop():
+    """Shows the most popular artists in the database"""
+    
+def getRec():
+    """Gives the user recommendations based on the preferences they input"""
+   
+def mostLikes():
+    """Shows the user which artist has the most likes according to the database"""
 
 def userChoice():
     """ Provides the user menu options """
