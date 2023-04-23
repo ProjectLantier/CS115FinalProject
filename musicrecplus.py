@@ -21,7 +21,7 @@ def fileData(filename):
     return dict
 
 def userName():
-    """Lets the user input their name and if they want their preferences to be private or not"""
+    """Lets the user input their name if their name isn't in the database"""
     #Bryce
     username = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
     return username
