@@ -20,11 +20,18 @@ def fileData(filename):
     dictGlobal = dict
     return dict
 
-def userName():
-    """Lets the user input their name if their name isn't in the database"""
+def checkName():
+    """Checks if the input user name is in the database, if not return false, if true add to database"""
     #Bryce
-    username = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
-    return username
+    global myName
+    while myName == "":
+        myName = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
+    if myName not in database:
+        database[myName] = []
+        # print("changed database:")
+        # print(database)
+        return False
+    return True
 
 def isPrivate(s):
     """Returns true if the username s has a $ at the end of it"""
