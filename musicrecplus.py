@@ -3,7 +3,7 @@
 
 import functools
 
-FILE = "musicrecplus.txt"
+filename = "musicrecplus.txt"
 
 
 def fileData(filename):
