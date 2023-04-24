@@ -54,6 +54,7 @@ def enterPreferences():
     return userChoice()
      
 def menu():
+    #Eshan
     print("""Enter a letter to choose an option:
 e - Enter preferences
 r - Get recommendations
@@ -91,22 +92,46 @@ def saveQuit():
 
 def deletePreferences():
     """ Deletes the user's preferences, user option d """
-   
+    #Eshan
+    dictGlobal[userName] = []
+    return userChoice()
 
 def showPreferences(userName):
     """ Display user preferences, user option s """
     #Bryce
     print(dictGlobal[userName])
 
-def showPop():
+def showPopular():
     """Shows the most popular artists in the database"""
+    #Eshan
+    artistDict = {}
+    for key in dictGlobal.keys():
+        for artist in dictGlobal[key]:
+            if artist in artistDict:
+                artistDict[artist] += 1
+            else:
+                artistDict[artist] = 1
+    return artistDict
     
-def getRec():
+def getRecommendations():
     """Gives the user recommendations based on the preferences they input"""
+    #Eshan
+    artistDict = showPopular()
+    for artist in dictGlobal[userName]:
+        if artist in artistDict:
+            del artistDict[artist]
+    sortedArtistDict = sorted(artistDict.items(), key=functools.cmp_to_key(Compare))
+    for artist in sortedArtistDict:
+        print(artist[0])
+    return userChoice()
    
 def mostLikes():
     """Shows the user which artist has the most likes according to the database"""
-
+    #Eshan
+    artistDict = showPopular()
+    sortedArtistDict = sorted(artistDict.items(), key=functools.cmp_to_key(Compare))
+    print(sortedArtistDict[0][0])
+    return userChoice()
 def userChoice():
     """ Provides the user menu options """
     #Lauren
@@ -121,13 +146,13 @@ def userChoice():
         if choices == "e":
             enterPreferences()
         elif choices == "r":
-            #getRec()
+            getRecommendations()
         elif choices == "p":
-            #showPop()
+            showPopular()
         elif choices == "h":
             mostPopular()
         elif choices == "m":
-            #mostLikes()
+            mostLikes()
         elif choices == "d":
             deletePreferences()
         elif choices == "s":
