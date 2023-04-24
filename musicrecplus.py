@@ -26,8 +26,8 @@ def checkName():
     global myName
     while myName == "":
         myName = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
-    if myName not in database:
-        database[myName] = []
+    if myName not in dictGlobal:
+        dictGlobal[myName] = []
         # print("changed database:")
         # print(database)
         return False
@@ -36,7 +36,7 @@ def checkName():
 def isPrivate(s):
     """Returns true if the username s has a $ at the end of it"""
     #Bryce
-    if s[-1] == $:
+    if s[-1] == "$":
         return True
     else:
         return False
@@ -44,7 +44,6 @@ def isPrivate(s):
 def enterPreferences():
     """Lets the user enter their artist preferences until they enter an empty string"""
     #Bryce
-    if 
     x = "0"
     while x != "":
         x = input("Enter an artist that you like (Enter to finish): \n")
@@ -55,7 +54,6 @@ def enterPreferences():
     return userChoice()
      
 def menu():
-    #Eshan
     print("""Enter a letter to choose an option:
 e - Enter preferences
 r - Get recommendations
@@ -93,9 +91,6 @@ def saveQuit():
 
 def deletePreferences():
     """ Deletes the user's preferences, user option d """
-    #Eshan
-    dictGlobal[userName] = []
-    return userChoice()
    
 
 def showPreferences(userName):
@@ -103,37 +98,14 @@ def showPreferences(userName):
     #Bryce
     print(dictGlobal[userName])
 
-def showPopular():
+def showPop():
     """Shows the most popular artists in the database"""
-    #Eshan
-    artistDict = {}
-    for key in dictGlobal.keys():
-        for artist in dictGlobal[key]:
-            if artist in artistDict:
-                artistDict[artist] += 1
-            else:
-                artistDict[artist] = 1
-    return artistDict
     
-def getRecommendations():
+def getRec():
     """Gives the user recommendations based on the preferences they input"""
-    #Eshan
-    artistDict = showPopular()
-    for artist in dictGlobal[userName]:
-        if artist in artistDict:
-            del artistDict[artist]
-    sortedArtistDict = sorted(artistDict.items(), key=functools.cmp_to_key(Compare))
-    for artist in sortedArtistDict:
-        print(artist[0])
-    return userChoice()
    
 def mostLikes():
     """Shows the user which artist has the most likes according to the database"""
-    #Eshan
-    artistDict = showPopular()
-    sortedArtistDict = sorted(artistDict.items(), key=functools.cmp_to_key(Compare))
-    print(sortedArtistDict[0][0])
-    return userChoice()
 
 def userChoice():
     """ Provides the user menu options """
@@ -149,13 +121,13 @@ def userChoice():
         if choices == "e":
             enterPreferences()
         elif choices == "r":
-            getRecommendations()
+            #getRec()
         elif choices == "p":
-            showPopular()
+            #showPop()
         elif choices == "h":
             mostPopular()
         elif choices == "m":
-            mostLikes()
+            #mostLikes()
         elif choices == "d":
             deletePreferences()
         elif choices == "s":
