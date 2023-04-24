@@ -26,8 +26,8 @@ def checkName():
     global myName
     while myName == "":
         myName = input("Enter your name (put a $ symbol after your name if you wish your preferences to remain private):")
-    if myName not in database:
-        database[myName] = []
+    if myName not in dictGlobal:
+        dictGlobal[myName] = []
         # print("changed database:")
         # print(database)
         return False
