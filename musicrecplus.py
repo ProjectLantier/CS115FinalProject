@@ -4,7 +4,7 @@
 import functools
 from ast import Compare
 
-filename = "musicrecplus.txt"
+FILE = "musicrecplus.txt"
 
 
 def fileData(filename):
